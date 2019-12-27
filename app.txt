@@ -1,0 +1,117 @@
+import React, { Component } from 'react';
+
+import './App.css';
+import Slide from './Slide/Slide';
+import Menu from './Menu/Menu';
+import Banner from './Banner/Banner';
+import BannerUnder from './BannerUnder/BannerUnder';
+import Products from './Products/Products';
+import Footer from './Footer/Footer';
+import RouterURL from '../RouterURL/RouterURL';
+import Contact from './Contact/Contact';
+class App extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      products : [
+        {
+          name: "Galaxy",
+          price: "350.000",
+          images: "../images/item1.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "NOVA",
+          price: "1350.000",
+          images: "../images/item8.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "Antimatter",
+          price: "380.000",
+          images: "../images/item7.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "Borealis",
+          price: "450.000",
+          images: "../images/item6.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "Void",
+          price: "550.000",
+          images: "../images/item5.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "Kubrick",
+          price: "650.000",
+          images: "../images/item3.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        {
+          name: "ZION II",
+          price: "1350.000",
+          images: "../images/item4.jpg",
+          content: "SMALL/MEDIUM BRAIDED BRACELET",
+        },
+        
+
+      ]
+    };  
+  }
+  
+  show_product = () => {
+    const listproducts = this.state.products.map((item, keys) =>
+  <Products key={keys} price={ item.price } content={item.content} images={item.images}>{item.name}</Products>
+    );
+    return listproducts;
+  }
+  
+  render() {
+    return (   
+            
+            <div className="container">
+              
+              <Menu />
+              <div className="wraper">
+                <RouterURL />
+                <Slide />
+                <Banner />
+    
+                {/* 	<img src="../images/slider.jpg" alt="slider" width="1200px">
+            <div class="left">
+              <h2><i>Free</i> Shipping</h2>
+              <p>gì dó</p>
+              <button class="btn"><a href="">Click</a></button>
+            </div>
+            <div class="right">
+              <button class="hidden"><</button>
+              <button class="hidden">></button>
+            </div>
+          </div> */}
+                
+                <h1 style={{textAlign: 'center', color: '#3498db'}}>Product Card</h1>
+                
+                { this.show_product() }
+                
+                
+                
+     
+                <div className="banner">
+                  <BannerUnder />
+                </div>
+                <div className="footer">
+                  <Footer />
+                </div>
+              </div>
+              
+            </div>
+            
+    );
+  }
+}
+ 
+export default App;

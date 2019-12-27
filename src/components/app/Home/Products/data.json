@@ -1,0 +1,51 @@
+
+[
+	
+	{
+		"id":1,
+		"ten": "Nova ",
+		"gia": 500000
+	},
+	{
+		"id":2,
+		"ten": "Kingston ",
+		"gia": 630000
+	},
+	{
+		"id":3,
+		"ten": "Wolverine ",
+		"gia": 690000
+	},
+	{
+		"id":4,
+		"ten": "Draco ",
+		"gia": 780000
+	},
+	{
+		"id":4,
+		"ten": "Japan Olympics ",
+		"gia": 480000
+	},
+	{
+		"id":5,
+		"ten": "Mastery ",
+		"gia": 3200000
+	},
+	{
+		"id":6,
+		"ten": "Tacky Sweater ",
+		"gia": 560000
+	},
+	{
+		"id":7,
+		"ten": "Comet ",
+		"gia": 400000
+	},
+	
+	{
+		"id":8,
+		"ten": "Asteroid ",
+		"gia": 390000
+	}
+
+]

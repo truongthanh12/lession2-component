@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>function</title>
+</head>
+<body>
+	<button  onclick="buttonClick()">+</button>
+	<input type="text" id="plus" value="0"></input>
+
+	<button  onclick="buttonClick2()">-</button>
+
+	<div>
+		<p id="str">Sweet but Psycho
+			Ava Max
+			Oh, she's sweet but a psycho
+			A little bit psycho
+			At night she's screamin'
+			"I'm-ma-ma-ma out my mind"
+			Oh, she's hot but a psycho
+			So left but she's right though
+			At night she's screamin'
+			"I'm-ma-ma-ma out my mind"
+			She'll make you curse, but she a blessing
+			She'll rip your shirt within a second
+			You'll be coming back, back for seconds
+			With your plate, you just can't help it
+			No, no, you'll play along
+			Let her lead you on, on, on
+			You'll be saying, "No, no"
+			Then saying, "Yes, yes, yes"
+			'Cause she messin' with your head
+			Oh, she's sweet but a psycho
+			A little bit psycho
+			At night she's screamin'
+			"I'm-ma-ma-ma out my mind"
+			Oh, she's hot but a psycho
+			So left but she's right though
+			At night she's screamin'
+			"I'm-ma-ma-ma out my mind"
+			Grab a cop gun kinda crazy
+			She's poison but tasty
+			Yeah, people say, "Run, don't walk away"
+			'Cause she's sweet but a psycho
+			A little bit psycho
+			At night she's screamin'
+			"I'm-ma-ma-ma out my mind"
+			See, someone said, "Don't drink her potions"
+			She'll kiss your neck with no emotion
+			When she's mean, you know you love it
+			'Cause she tastes so sweet, don't sugarcoat it
+			No, no, you'll play along
+			Let her lead you on, on, on
+			You'll be saying, "No (no, no, no, no), no (no, no)"
+			Then saying, "Yes, yes, yes"
+			'Cause she messin' with your head
+		</p>
+		
+		<input type="text" value="" id="txt1"></input>
+		<p id="demo">Found 0 results</p>
+
+		<!-- tìm ra ảnh -->
+		<div id="content">
+
+    </div>
+    
+    <input type="text" id="search-text">
+    <input type="button" value="SEARCH" onclick="onSearch()">
+
+    <div id="result">
+
+    </div>
+
+	<script type="text/javascript" src="index.js"></script>
+		
+    <script>
+    
+        const menu = [
+            {
+                name: 'Cafe da',
+                src: '../../images/item_1.jpg',
+                price: 10000
+            },
+            {
+                name: 'Cafe sua',
+                src: '../../images/item_2.jpg',
+                price: 15000
+            }
+        ];
+
+        window.onload = function(){
+            document.getElementById('content').innerHTML = ``;
+            for (let index = 0; index < menu.length; index++) {
+                const element = menu[index];
+                document.getElementById('content').innerHTML += `<img src="${element.src}" alt="${element.name}" width="100px"><p>${element.name}-${element.price}</p>`;
+            }
+
+        }
+
+        function onSearch() {
+            const key = document.getElementById('search-text').value.toUpperCase();
+            let pos = -1;
+
+            for (let index = 0; index < menu.length; index++) {
+                const element = menu[index];
+                if (element.name.toUpperCase().includes(key)) {
+                    pos = index;
+                    break;
+                }
+            }
+
+            if (pos > -1) {
+                document.getElementById('result').innerHTML = `<img src="${menu[pos].src}" alt="${menu[pos].name}" width="100px"><p>${menu[pos].name}-${menu[pos].price}</p>`;
+            }
+            else{
+            	document.getElementById('result').innerHTML = 'Khong tim thay';
+            }
+        }
+    
+    </script>
+</body>
+</html>
+	
